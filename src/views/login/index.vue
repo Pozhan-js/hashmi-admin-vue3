@@ -2,7 +2,7 @@
   <div class="login-container">
     <el-alert
       v-show="false"
-      title="尚品汇商城管理平台"
+      title="Mi管理平台"
       type="success"
       :closable="false"
       style="position: fixed"
@@ -21,7 +21,7 @@
         >
           <div class="form-header">
             <div class="title">Hello!</div>
-            <div class="title-tips">欢迎来到白哥开源社区！</div>
+            <div class="title-tips">欢迎来到Mi的管理后台模版!</div>
           </div>
           <el-form-item prop="username">
             <el-input
