@@ -2,7 +2,7 @@
   <div class="logo-container flex-center">
     <a href="/">
       <img class="logo" alt="logo" src="/logo.svg" />
-      <h1 class="title" v-show="!collapse">Base Admin</h1>
+      <h1 class="title" v-show="!collapse">HashMi Admin</h1>
     </a>
   </div>
 </template>
