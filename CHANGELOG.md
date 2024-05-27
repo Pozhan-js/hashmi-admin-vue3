@@ -29,3 +29,4 @@
 - 使用 husky 做代码提交校验
 - 集成了 commitlint 规范提交信息
 - 强制使用 pnpm 作为包管理工具
+- test
