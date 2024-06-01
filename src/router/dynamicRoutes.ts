@@ -40,19 +40,19 @@ export const dynamicRoutes: RouteRecordRaw[] = [
           noAuth: true,
           title: 'Github',
           icon: 'Link',
-          isLink: 'https://github.com/xiumubai/vivace-admin-vue',
+          isLink: 'https://github.com/Pozhan-js/mi-admin',
         },
       },
-      {
-        path: '/link/yuque',
-        component: () => import('@/views/acl/user/index.vue'),
-        meta: {
-          noAuth: true,
-          title: '开源文档',
-          icon: 'Link',
-          isLink: 'https://www.yuque.com/xiumubai/open',
-        },
-      },
+      // {
+      //   path: '/link/yuque',
+      //   component: () => import('@/views/acl/user/index.vue'),
+      //   meta: {
+      //     noAuth: true,
+      //     title: '开源文档',
+      //     icon: 'Link',
+      //     isLink: 'https://www.yuque.com/xiumubai/open',
+      //   },
+      // },
     ],
   },
   // 权限管理
