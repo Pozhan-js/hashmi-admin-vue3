@@ -64,7 +64,7 @@ export const INFOLIST = [
   { name: '公众号', desc: '无', span: 1 },
   {
     name: '哈希米的博客',
-    desc: 'https://pozhan-js.github.io/',
+    desc: 'https://new-blog-two-ruddy.vercel.app/',
     span: 2,
     isLink: true,
   },
