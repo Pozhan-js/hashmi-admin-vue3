@@ -229,4 +229,40 @@ export const dynamicRoutes: RouteRecordRaw[] = [
       },
     ],
   },
+  {
+    name: 'TestComponent',
+    path: '/testComponent',
+    component: Layout,
+    redirect: '/testComponent/form',
+    meta: {
+      title: '组件封装',
+      icon: 'Document',
+      noAuth: true,
+    },
+    children: [
+      {
+        name: 'Form',
+        path: '/testComponent/form',
+        component: () => import('@/views/testComponents/form/index.vue'),
+        meta: {
+          title: 'form-组件',
+          icon: 'Document',
+          noAuth: true,
+          badge: '2',
+        },
+      },
+
+      {
+        name: 'Form',
+        path: '/testComponent/form',
+        component: () => import('@/views/testComponents/form/index.vue'),
+        meta: {
+          title: 'form-组件',
+          icon: 'Document',
+          noAuth: true,
+          badge: '2',
+        },
+      },
+    ],
+  },
 ]

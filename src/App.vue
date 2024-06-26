@@ -11,6 +11,7 @@
 import { computed } from 'vue'
 import { useTheme } from './hooks/useTheme'
 import { useScreenLockStore } from '@/store/modules/screenLock'
+
 // 锁屏
 const screenLockStore = useScreenLockStore()
 const isLock = computed(() => screenLockStore.isLocked)

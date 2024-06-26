@@ -58,10 +58,10 @@ export const CATEGORY = [
 ]
 
 export const INFOLIST = [
-  { name: '社区名称', desc: '自己闹着玩', span: 1 },
+  { name: '项目名称', desc: 'hashMi Admin', span: 1 },
   { name: '开始时间', desc: '2023-10-30', span: 1 },
-  { name: '参与人员', desc: '隔壁狗蛋', span: 1 },
-  { name: '公众号', desc: '无', span: 1 },
+  { name: '参与人员', desc: '本人', span: 1 },
+  { name: 'qq号', desc: '854059946', span: 1 },
   {
     name: '哈希米的博客',
     desc: 'https://new-blog-two-ruddy.vercel.app/',
@@ -77,19 +77,19 @@ export const INFOLIST = [
   {
     name: '业务范围',
     span: 2,
-    desc: '后台管理系统、小程序、脚手架、组件库、文档平台、大屏可视化、低代码、源码重构等等',
+    desc: '后台管理系统、小程序、脚手架、组件库、文档平台、大屏可视化、uniapp等等',
   },
   {
     span: 2,
     name: '技术栈',
     desc: 'React、Vue、Next、Nuxt、Nest、Element-Plus、echarts',
   },
-  {
-    span: 2,
-    name: '白哥github',
-    desc: 'https://github.com/xiumubai',
-    isLink: true,
-  },
+  // {
+  //   span: 2,
+  //   name: '白哥github',
+  //   desc: 'https://github.com/xiumubai',
+  //   isLink: true,
+  // },
 ]
 
 export const OPTIONSLIST = [
