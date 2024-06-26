@@ -2,7 +2,7 @@
   <div class="layout-footer-container">
     Copyright
     <svg-icon name="copyright" size="16px" color="rgba(0, 0, 0, 0.45)" />
-    {{ fullYear }}哈希米的Vue3 Admin
+    {{ fullYear }}哈希米的HashMi Admin
   </div>
 </template>
 
