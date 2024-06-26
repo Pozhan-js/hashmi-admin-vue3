@@ -136,7 +136,7 @@ export const dynamicRoutes: RouteRecordRaw[] = [
       {
         path: '/list/complex',
         component: () => import('@/views/list/complex/index.vue'),
-        meta: { title: '复杂列表', icon: 'Grid', noAuth: true, badge: 'New' },
+        meta: { title: '列表合并', icon: 'Grid', noAuth: true, badge: 'New' },
       },
     ],
   },
