@@ -2,6 +2,7 @@
 @import './theme';
 @import './element';
 @import './global';
+@import './base.scss';
 
 // 滚动条样式
 @mixin base-scrollbar {

@@ -251,13 +251,24 @@ export const dynamicRoutes: RouteRecordRaw[] = [
           badge: '2',
         },
       },
-
       {
-        name: 'Form',
-        path: '/testComponent/form',
-        component: () => import('@/views/testComponents/form/index.vue'),
+        name: 'WaterFullList',
+        path: '/testComponent/waterfull-list',
+        component: () =>
+          import('@/views/testComponents/waterfull-list/index.vue'),
         meta: {
-          title: 'form-组件',
+          title: 'WaterFullList-组件',
+          icon: 'Document',
+          noAuth: true,
+          badge: '2',
+        },
+      },
+      {
+        name: 'MyWater',
+        path: '/testComponent/water',
+        component: () => import('@/views/testComponents/my-water/index.vue'),
+        meta: {
+          title: 'MyWater-组件',
           icon: 'Document',
           noAuth: true,
           badge: '2',

@@ -1,0 +1,80 @@
+.flex {
+    display: flex;
+}
+
+.flex-shrink {
+    flex-shrink: 0;
+}
+
+.gap{
+  gap: 20px;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-around {
+    justify-content: space-around;
+   
+}
+
+.justify-evenly{
+  justify-content: space-evenly;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.no-wrap {
+    flex-wrap: nowrap;
+}
+
+.text_ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+  }
+
+
+.text-ellipsis,
+.text-ellipsis-2{
+    display: -webkit-box !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+}
+
+/* 文本省略一排 */
+.text-ellipsis {
+    -webkit-line-clamp: 1;
+  }
+  
+  /* 文本省略两排 */
+.text-ellipsis-2 {
+    -webkit-line-clamp: 2;
+  }
+
+.text-center {
+    text-align: center;
+  }
+
+
+  .el-submenu.is-opened > .el-submenu__title .el-submenu__icon-arrow {
+    display: none;
+  }
+  
+  .el-submenu > .el-submenu__title .el-submenu__icon-arrow {
+    display: none;
+  }

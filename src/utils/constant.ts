@@ -60,7 +60,7 @@ export const CATEGORY = [
 export const INFOLIST = [
   { name: '项目名称', desc: 'hashMi Admin', span: 1 },
   { name: '开始时间', desc: '2023-10-30', span: 1 },
-  { name: '参与人员', desc: '本人', span: 1 },
+  { name: '参与人员', desc: 'hashMi', span: 1 },
   { name: 'qq号', desc: '854059946', span: 1 },
   {
     name: '哈希米的博客',
