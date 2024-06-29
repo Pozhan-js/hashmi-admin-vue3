@@ -1,6 +1,11 @@
 // import MessageBox from '../views/testComponents/myDialog/components/MessageBox.vue'
-import { createApp, createElementVNode, ComponentInternalInstance } from 'vue'
-import { styled } from '@styils/vue'
+import {
+  createApp,
+  createElementVNode,
+  type ComponentPublicInstance,
+  defineComponent,
+} from 'vue'
+import { styled } from '@styils/vue' // 定义扩展后的组件实例类型接口
 
 const DivModal = styled('div', {
   position: 'fixed',
@@ -49,12 +54,16 @@ const MessageBox = {
     },
   },
 
-  render(ctx: ComponentInternalInstance) {
+  render(
+    ctx: ComponentPublicInstance<{ msg: string }, { onClick: () => void }>,
+  ) {
+    console.log(ctx)
+
     return (
       <DivModal>
         <DivBox>
-          <DivText>{ctx.props.msg}</DivText>
-          <Button class="btn" onClick={() => ctx.emit('onClick')}>
+          <DivText>{ctx.$props.msg!}</DivText>
+          <Button class="btn" onClick={() => ctx.$emit('onClick')}>
             确定
           </Button>
         </DivBox>

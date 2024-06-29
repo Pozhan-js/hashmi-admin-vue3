@@ -253,7 +253,7 @@ export const dynamicRoutes: RouteRecordRaw[] = [
       },
       {
         name: 'WaterFullList',
-        path: '/testComponent/waterfull-list',
+        path: 'waterfull-list',
         component: () =>
           import('@/views/testComponents/waterfull-list/index.vue'),
         meta: {
