@@ -248,7 +248,7 @@ export const dynamicRoutes: RouteRecordRaw[] = [
           title: 'form-组件',
           icon: 'Document',
           noAuth: true,
-          badge: '2',
+          badge: '0',
         },
       },
       {
@@ -260,7 +260,7 @@ export const dynamicRoutes: RouteRecordRaw[] = [
           title: 'WaterFullList-组件',
           icon: 'Document',
           noAuth: true,
-          badge: '2',
+          badge: '1',
         },
       },
       {
@@ -272,6 +272,17 @@ export const dynamicRoutes: RouteRecordRaw[] = [
           icon: 'Document',
           noAuth: true,
           badge: '2',
+        },
+      },
+      {
+        name: 'myDialog',
+        path: '/testComponent/myDialog',
+        component: () => import('@/views/testComponents/myDialog/index.vue'),
+        meta: {
+          title: '命令式Dialog-组件',
+          icon: 'Document',
+          noAuth: true,
+          badge: '3',
         },
       },
     ],
