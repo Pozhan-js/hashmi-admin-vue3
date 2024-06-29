@@ -1,5 +1,5 @@
 // import MessageBox from '../views/testComponents/myDialog/components/MessageBox.vue'
-import { createApp, createElementVNode } from 'vue'
+import { createApp, createElementVNode, ComponentInternalInstance } from 'vue'
 import { styled } from '@styils/vue'
 
 const DivModal = styled('div', {
@@ -48,14 +48,13 @@ const MessageBox = {
       default: 'Hello World',
     },
   },
-  render(ctx: any) {
-    const { $props, $emit } = ctx
-    // return createElementVNode('h1', null, 'xxxx')
+
+  render(ctx: ComponentInternalInstance) {
     return (
       <DivModal>
         <DivBox>
-          <DivText>{$props.msg}</DivText>
-          <Button class="btn" onClick={$emit('onClick')}>
+          <DivText>{ctx.props.msg}</DivText>
+          <Button class="btn" onClick={() => ctx.emit('onClick')}>
             确定
           </Button>
         </DivBox>
@@ -64,7 +63,10 @@ const MessageBox = {
   },
 }
 
-export default function useDialog(msg: string, clickHandler: any) {
+export default function useDialog(
+  msg: string,
+  clickHandler: (close: () => void) => void,
+) {
   const app = createApp(MessageBox, {
     msg,
     onClick() {
