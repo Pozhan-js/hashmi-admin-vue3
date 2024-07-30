@@ -38,7 +38,7 @@
     "dayjs": "^1.11.9",
     "echarts": "^5.4.1",
     "echarts-liquidfill": "^3.1.0",
-    "element-plus": "^2.2.28",
+    "element-plus": "^2.7.6",
     "exceljs": "^4.3.0",
     "md-editor-v3": "^4.2.2",
     "nprogress": "^0.2.0",

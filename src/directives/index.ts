@@ -7,10 +7,12 @@
  */
 import { App } from 'vue'
 import auth from './modules/auth'
+import focus from './modules/focus'
 
 const directivesList: any = {
   // Custom directives
   auth,
+  focus,
 }
 const directives = {
   install: function (app: App<Element>) {
