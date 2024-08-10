@@ -104,7 +104,6 @@ export const dynamicRoutes: RouteRecordRaw[] = [
       },
     ],
   },
-
   // 基础数据模块
   {
     path: '/list',
@@ -229,6 +228,7 @@ export const dynamicRoutes: RouteRecordRaw[] = [
       },
     ],
   },
+  // 组件封装
   {
     name: 'TestComponent',
     path: '/testComponent',
@@ -283,6 +283,51 @@ export const dynamicRoutes: RouteRecordRaw[] = [
           icon: 'Document',
           noAuth: true,
           badge: '3',
+        },
+      },
+      {
+        name: 'myTable',
+        path: '/testComponent/myTable',
+        component: () => import('@/views/testComponents/myTable/index.vue'),
+        meta: {
+          title: '表格-组件',
+          icon: 'Document',
+          noAuth: true,
+          badge: '1',
+        },
+      },
+    ],
+  },
+  // 函数编程
+  {
+    name: 'Fn',
+    path: '/fn',
+    component: Layout,
+    redirect: '/fn/index',
+    meta: {
+      title: '函数编程',
+      icon: 'Setting',
+      noAuth: true,
+    },
+    children: [
+      {
+        name: 'useComputed',
+        path: '/fn/index',
+        component: () => import('@/views/function/useComputedPage.vue'),
+        meta: {
+          title: 'useComputed',
+          icon: 'Plus',
+          noAuth: true,
+        },
+      },
+      {
+        name: ' ',
+        path: '/fn/lazyLoad',
+        component: () => import('@/views/function/lazyLoad.vue'),
+        meta: {
+          title: 'useComputed',
+          icon: 'Plus',
+          noAuth: true,
         },
       },
     ],
