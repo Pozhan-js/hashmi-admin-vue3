@@ -296,6 +296,28 @@ export const dynamicRoutes: RouteRecordRaw[] = [
           badge: '1',
         },
       },
+      {
+        name: 'myDriver',
+        path: '/testComponent/myDriver',
+        component: () => import('@/views/testComponents/myDriver/index.vue'),
+        meta: {
+          title: '引导页-组件',
+          icon: 'Document',
+          noAuth: true,
+          badge: '1',
+        },
+      },
+      {
+        name: 'myTree',
+        path: '/testComponent/myTree',
+        component: () => import('@/views/testComponents/myTree/index.vue'),
+        meta: {
+          title: '树形控件-组件',
+          icon: 'Document',
+          noAuth: true,
+          badge: '1',
+        },
+      },
     ],
   },
   // 函数编程

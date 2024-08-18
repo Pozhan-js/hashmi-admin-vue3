@@ -1,26 +1,29 @@
 <template>
   <el-card>
-    <el-table
-      :data="tableData"
-      :span-method="objectSpanMethod"
-      border
-      show-summary
-      style="width: 100%"
-    >
-      <el-table-column prop="title" width="180" label="评分维度" />
-      <el-table-column prop="content" label="评分内容" />
-      <el-table-column prop="score" width="80" label="分值" align="center" />
-    </el-table>
-    <div
-      style="
-        width: 100%;
-        height: 50px;
-        border: 1px solid #eceef4;
-        line-height: 50px;
-        padding-left: 20px;
-      "
-    >
-      注: 评分采用百分制,由各个评委进行评分
+    <div>
+      <el-table
+        :data="tableData"
+        :span-method="objectSpanMethod"
+        border
+        show-summary
+        style="width: 100%"
+      >
+        <el-table-column prop="title" width="180" label="评分维度" />
+        <el-table-column prop="content" label="评分内容" />
+        <el-table-column prop="score" width="80" label="分值" align="center" />
+      </el-table>
+      <div
+        style="
+          width: 100%;
+          box-sizing: border-box;
+          height: 50px;
+          border: 1px solid #eceef4;
+          line-height: 50px;
+          padding-left: 20px;
+        "
+      >
+        注: 评分采用百分制,由各个评委进行评分
+      </div>
     </div>
   </el-card>
 </template>
@@ -137,7 +140,7 @@ const dataGroupBy = (arr: User[]) => {
     resultArr = [...resultArr, ...(result[key] as User[])]
   })
 
-  return resultArr.sort((a, b) => a.id - b.id)
+  return resultArr.toSorted((a, b) => a.id - b.id)
 }
 
 const objectSpanMethod = ({
@@ -147,14 +150,17 @@ const objectSpanMethod = ({
   columnIndex,
 }: SpanMethodProps) => {
   if (columnIndex === 0) {
+    // 当前列为第一列则永远不会执行进入这个条件,因为第一行数据前面没有数据
     if (rowIndex > 0 && row.title === tableData[rowIndex - 1].title) {
       // 当前行的姓名与前一行相同，则合并行
       return { rowspan: 0, colspan: 0 }
     } else {
+      // TODO: 注意该条件会被先执行,因为第一行的的数据一定不会被合并会保持数据完整
       // 当前行的姓名与前一行不同，则计算当前行的姓名在数组中的索引
       const index = tableData.findIndex((item) => item.title === row.title)
       // 从当前行开始向下查找，直到找到姓名不同的行为止
       let rowspan = 1
+      // 计算需要向下合并的行数
       for (let i = index + 1; i < tableData.length; i++) {
         if (tableData[i].title === row.title) {
           rowspan++
@@ -162,7 +168,8 @@ const objectSpanMethod = ({
           break
         }
       }
-      return { rowspan, colspan: 1 }
+      // 返回合并行数和列数
+      return { rowspan, colspan: 1 } //意思是第一列合并rowspan行
     }
   }
 }

@@ -14,8 +14,10 @@ const auth: Directive = {
       const hasPermission = value.every((item) =>
         currentPageRoles.includes(item),
       )
+      // 没有权限移除元素
       if (!hasPermission) el.remove()
     } else {
+      // 没有权限移除元素
       if (!currentPageRoles.includes(value)) el.remove()
     }
   },

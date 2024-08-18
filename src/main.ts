@@ -10,6 +10,9 @@ import router from './router'
 import registerGlobComp from './components'
 import directives from '@/directives/index'
 
+// 全局引导页样式样式
+import 'driver.js/dist/driver.css'
+
 // element默认主题
 import 'element-plus/dist/index.css'
 // 公共样式，包含自定义暗黑模式，element重置样式
