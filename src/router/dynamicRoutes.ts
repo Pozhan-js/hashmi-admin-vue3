@@ -318,6 +318,29 @@ export const dynamicRoutes: RouteRecordRaw[] = [
           badge: '1',
         },
       },
+      {
+        name: 'myUpload',
+        path: '/testComponent/myUpload',
+        component: () => import('@/views/testComponents/myUpload/index.vue'),
+        meta: {
+          title: '上传组件封装-组件',
+          icon: 'Document',
+          noAuth: true,
+          badge: '1',
+        },
+      },
+      {
+        name: 'myAutoComplete',
+        path: '/testComponent/myAutoComplete',
+        component: () =>
+          import('@/views/testComponents/myAutoComplete/index.vue'),
+        meta: {
+          title: '自动补全-组件',
+          icon: 'Document',
+          noAuth: true,
+          badge: '1',
+        },
+      },
     ],
   },
   // 函数编程
@@ -338,16 +361,60 @@ export const dynamicRoutes: RouteRecordRaw[] = [
         component: () => import('@/views/function/useComputedPage.vue'),
         meta: {
           title: 'useComputed',
-          icon: 'Plus',
+          icon: 'InfoFilled',
           noAuth: true,
         },
       },
       {
-        name: ' ',
+        name: 'LazyLoad',
         path: '/fn/lazyLoad',
         component: () => import('@/views/function/lazyLoad.vue'),
         meta: {
-          title: 'useComputed',
+          title: '懒加载',
+          icon: 'Refresh',
+          noAuth: true,
+        },
+      },
+    ],
+  },
+  // 测试页面
+  {
+    name: 'TestCode',
+    path: '/testCode',
+    component: Layout,
+    redirect: '/testCode/index',
+    meta: {
+      title: '测试页面',
+      icon: 'Setting',
+      noAuth: true,
+    },
+    children: [
+      {
+        name: 'AutoEchart',
+        path: '/testCode/index',
+        component: () => import('@/views/testCode/myEchart/index.vue'),
+        meta: {
+          title: '自动加载图表',
+          icon: 'Setting',
+          noAuth: true,
+        },
+      },
+      {
+        name: 'AGGrid',
+        path: '/testCode/dragTable',
+        component: () => import('@/views/testCode/AGGrid/index.vue'),
+        meta: {
+          title: '拖拽表格',
+          icon: 'Setting',
+          noAuth: true,
+        },
+      },
+      {
+        name: 'ProComponents',
+        path: '/testCode/ActiveForm',
+        component: () => import('@/views/testCode/ProTest/index.vue'),
+        meta: {
+          title: '动态表单',
           icon: 'Plus',
           noAuth: true,
         },

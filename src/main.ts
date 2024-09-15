@@ -10,6 +10,13 @@ import router from './router'
 import registerGlobComp from './components'
 import directives from '@/directives/index'
 
+import 'ag-grid-community/styles/ag-grid.css' // Mandatory CSS required by the Data Grid
+import 'ag-grid-community/styles/ag-theme-quartz.css' // Optional Theme applied to the Data Grid
+
+// 导入plus-pro-components 及其样式
+import PlusProComponents from 'plus-pro-components'
+import 'plus-pro-components/index.css'
+
 // 全局引导页样式样式
 import 'driver.js/dist/driver.css'
 
@@ -35,6 +42,8 @@ app.use(ElementPlus, {
 })
 
 app.use(registerGlobComp)
+
+app.use(PlusProComponents)
 
 app.use(pinia)
 

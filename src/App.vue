@@ -8,10 +8,13 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import * as echarts from 'echarts'
+
+import { computed, provide } from 'vue'
 import { useTheme } from './hooks/useTheme'
 import { useScreenLockStore } from '@/store/modules/screenLock'
 
+provide('$echarts', echarts)
 // 锁屏
 const screenLockStore = useScreenLockStore()
 const isLock = computed(() => screenLockStore.isLocked)
