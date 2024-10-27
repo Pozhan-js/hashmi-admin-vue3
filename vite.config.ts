@@ -9,7 +9,6 @@ import VueSetupExtend from 'vite-plugin-vue-setup-extend'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import svgLoader from 'vite-svg-loader'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-import { PlusProComponentsResolver } from '@plus-pro-components/resolver'
 
 export default defineConfig((config) => {
   const { command, mode } = config
@@ -27,7 +26,7 @@ export default defineConfig((config) => {
         resolvers: [ElementPlusResolver()],
       }),
       Components({
-        resolvers: [ElementPlusResolver(), PlusProComponentsResolver()],
+        resolvers: [ElementPlusResolver()],
       }),
       createSvgIconsPlugin({
         iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
