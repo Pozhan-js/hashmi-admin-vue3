@@ -341,6 +341,18 @@ export const dynamicRoutes: RouteRecordRaw[] = [
           badge: '1',
         },
       },
+      {
+        name: 'activeComponents',
+        path: '/testComponent/activeComponents',
+        component: () =>
+          import('@/views/testComponents/activeComponents/index.vue'),
+        meta: {
+          title: '动态组件',
+          icon: 'Document',
+          noAuth: true,
+          badge: '1',
+        },
+      },
     ],
   },
   // 函数编程
@@ -371,6 +383,36 @@ export const dynamicRoutes: RouteRecordRaw[] = [
         component: () => import('@/views/function/lazyLoad.vue'),
         meta: {
           title: '懒加载',
+          icon: 'Refresh',
+          noAuth: true,
+        },
+      },
+      {
+        name: 'myRef',
+        path: '/fn/myRef',
+        component: () => import('@/views/function/myRef.vue'),
+        meta: {
+          title: '自定义ref',
+          icon: 'Refresh',
+          noAuth: true,
+        },
+      },
+      {
+        name: 'tagMessage',
+        path: '/fn/tagMessage',
+        component: () => import('@/views/function/tagMessage.vue'),
+        meta: {
+          title: '跨标签页通信',
+          icon: 'Refresh',
+          noAuth: true,
+        },
+      },
+      {
+        name: 'autoHeight',
+        path: '/fn/autoHeight',
+        component: () => import('@/views/function/autoHeight.vue'),
+        meta: {
+          title: '高度自适应',
           icon: 'Refresh',
           noAuth: true,
         },

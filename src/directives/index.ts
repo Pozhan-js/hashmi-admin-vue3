@@ -8,11 +8,15 @@
 import { App } from 'vue'
 import auth from './modules/auth'
 import focus from './modules/focus'
+import adaptive from './web/adaptive'
+import tooltip from './web/tooltip'
 
 const directivesList: any = {
   // Custom directives
   auth,
   focus,
+  adaptive,
+  tooltip,
 }
 const directives = {
   install: function (app: App<Element>) {

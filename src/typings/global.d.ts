@@ -57,3 +57,6 @@ declare namespace Menu {
     isKeepAlive: boolean
   }
 }
+
+declare type ComponentRef<T extends HTMLElement = HTMLDivElement> =
+  ComponentElRef<T> | null

@@ -46,7 +46,9 @@
       </div>
     </div>
     <!-- 表格主体 -->
+
     <el-table
+      v-adaptive="{ bottom: 100 }"
       ref="tableRef"
       v-bind="$attrs"
       v-loading="loading"
@@ -105,6 +107,7 @@
         </div>
       </template>
     </el-table>
+
     <!-- 分页组件 -->
     <slot name="pagination">
       <Pagination

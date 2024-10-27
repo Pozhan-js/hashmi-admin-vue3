@@ -98,6 +98,7 @@ import { useRouter } from 'vue-router'
 import { OPTIONSLIST, INFOLIST } from '@/utils/constant'
 import { MdPreview } from 'md-editor-v3'
 import 'md-editor-v3/lib/preview.css'
+import { logList } from './log'
 const router = useRouter()
 const userStore = useUserStore()
 const userInfo = userStore.userInfo
@@ -111,16 +112,22 @@ const handleView = (url: string) => {
 }
 
 onMounted(async () => {
-  const octokit = new Octokit({
-    auth: `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`,
-  })
-  const result = await octokit.request(
-    'GET /repos/xiumubai/vivace-admin-vue/releases',
-  )
-  list.value = result.data.map((v: any) => {
+  // const octokit = new Octokit({
+  //   auth: `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`,
+  // })
+  // const result = await octokit.request(
+  //   'GET /repos/xiumubai/vivace-admin-vue/releases',
+  // )
+  // list.value = result.data.map((v: any) => {
+  //   return {
+  //     content: v.body,
+  //     timestamp: dayjs(v.published_at).format('YYYY/MM/DD hh:mm:ss A'),
+  //   }
+  // })
+  list.value = logList.map((v: any) => {
     return {
-      content: v.body,
-      timestamp: dayjs(v.published_at).format('YYYY/MM/DD hh:mm:ss A'),
+      content: v.content,
+      timestamp: dayjs(v.timestamp).format('YYYY/MM/DD hh:mm:ss A'),
     }
   })
 })

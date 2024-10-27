@@ -108,6 +108,15 @@
       <el-form-item label="Activity form" prop="desc">
         <el-input v-model="ruleForm.desc" type="textarea" />
       </el-form-item>
+      <el-form-item label="Activity form" prop="num">
+        <!-- <el-input-number v-model="ruleForm.num" :min="0" :step="1" />
+          -->
+        <el-input
+          type="number"
+          v-model="ruleForm.num"
+          @input="onInput($event)"
+        />
+      </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="submitForm(ruleFormRef)">
           Create
@@ -123,6 +132,7 @@ import { reactive, watch, ref } from 'vue'
 import { isDark } from '@/composables/dark'
 
 import type { ComponentSize, FormInstance, FormRules } from 'element-plus'
+import { log } from 'console'
 
 interface RuleForm {
   name: string
@@ -135,6 +145,7 @@ interface RuleForm {
   type: string[]
   resource: string
   desc: string
+  num: string
 }
 
 const formSize = ref<ComponentSize>('default')
@@ -150,6 +161,7 @@ const ruleForm = reactive<RuleForm>({
   type: [],
   resource: '',
   desc: '',
+  num: '',
 })
 
 const locationOptions = ['Home', 'Company', 'School']
@@ -214,6 +226,14 @@ const rules = reactive<FormRules<RuleForm>>({
   desc: [
     { required: true, message: 'Please input activity form', trigger: 'blur' },
   ],
+  num: [
+    {
+      required: true,
+      message: 'Please input activity form',
+      trigger: 'blur',
+      // trigger: 'change',
+    },
+  ],
 })
 
 const submitForm = async (formEl: FormInstance | undefined) => {
@@ -236,6 +256,13 @@ const options = Array.from({ length: 10000 }).map((_, idx) => ({
   value: `${idx + 1}`,
   label: `${idx + 1}`,
 }))
+
+const onInput = (event: any) => {
+  // 过滤掉非数字的字符，包括 'e', 'E', '+', '-'
+  //  e.target.value = (e.target.value.match(/^\d*(\.?\d{0,1})/g)[0]) || null
+  const filteredValue = event.replace(/[eE\+\-]/g, '')
+  ruleForm.num = filteredValue
+}
 
 const font = reactive({
   color: '#bfc',

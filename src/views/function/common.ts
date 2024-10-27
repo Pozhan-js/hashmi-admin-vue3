@@ -1,4 +1,4 @@
-import { computed } from 'vue'
+import { computed, customRef } from 'vue'
 
 // 缓存函数
 export function cacheComputed(fn: any) {
@@ -17,4 +17,24 @@ export function cacheComputed(fn: any) {
 
     return result
   }
+}
+
+// 自定义ref
+export function debounceRef(value: any, delay: number = 1000) {
+  let timer: any = null
+  return customRef((track, trigger) => ({
+    get() {
+      // 收集依赖
+      track()
+      return value
+    },
+    set(val) {
+      clearTimeout(timer)
+      timer = setTimeout(() => {
+        // 触发更新
+        value = val
+        trigger()
+      }, delay)
+    },
+  }))
 }
