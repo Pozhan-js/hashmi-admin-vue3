@@ -48,7 +48,7 @@
     <!-- 表格主体 -->
 
     <el-table
-      v-adaptive="{ bottom: 100 }"
+      v-adaptive="{ bottom: 150 }"
       ref="tableRef"
       v-bind="$attrs"
       v-loading="loading"
